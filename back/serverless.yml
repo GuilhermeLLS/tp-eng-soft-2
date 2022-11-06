@@ -1,0 +1,60 @@
+service: kudos-cards
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: ${self:custom.tableRef}
+    - Effect: Allow
+      Action:
+        - cognito-idp:ListUsers
+        - cognito-idp:SignUp
+        - cognito-idp:SignIn
+      Resource: ${self:custom.cognitoRef}
+
+  httpApi:
+    cors: true
+    payload: '2.0'
+
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /kudo
+          method: 'POST'
+      - httpApi:
+          path: /kudo
+          method: 'PUT'    
+      - httpApi:
+          path: /kudos
+          method: 'GET'
+      - httpApi:
+          path: /kudos/{id}
+          method: 'DELETE'
+      - httpApi:
+          path: /users
+          method: 'GET'
+      - httpApi:
+          path: /user
+          method: 'POST'
+      - httpApi:
+          path: /sign-in
+          method: 'POST'
+
+custom:
+  tableRef: arn:aws:dynamodb:us-east-1:202773188232:table/kudos
+  cognitoRef: arn:aws:cognito-idp:us-east-1:202773188232:userpool/us-east-1_AF5l44Ear
