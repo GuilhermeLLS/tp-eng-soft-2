@@ -1,0 +1,75 @@
+.sidebar {
+  display: flex;
+  border-left: 1.5px solid rgba(188, 140, 242, 0.25);
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 1921px) and (max-width: 2560px) {
+  .sidebar {
+    margin-left: 770px;
+  }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1920px) {
+  .sidebar {
+    margin-left: 450px;
+  }
+}
+
+@media only screen and (min-width: 1281px) and (max-width: 1366px) {
+  .sidebar {
+    margin-left: 180px;
+  }
+}
+
+.menuItemIcon {
+  margin-right: 10px;
+}
+
+.sColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItem {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: large;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  background-color: rgba(188, 140, 242, 0.25);
+  opacity: 0.7;
+}
+
+.composerButton {
+  margin: 15px 0;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 24px;
+  width: 170px;
+  align-self: flex-end;
+  box-shadow: 2px 2px var(--accent-color);
+  background-color: var(--tertiary-color);
+}
+
+.composerButton:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0px 15px 20px rgba(147, 120, 247, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}

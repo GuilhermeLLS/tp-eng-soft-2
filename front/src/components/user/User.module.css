@@ -1,0 +1,69 @@
+.user {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.userImage {
+  top: 50%;
+  margin-top: -52px;
+}
+
+.username {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+}
+
+.userCardList {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  box-sizing: border-box;
+  border-top: 1.5px solid rgba(188, 140, 242, 0.25);
+}
+
+.userFilter {
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userCardList > * {
+  box-sizing: border-box;
+  border-bottom: 1.5px solid rgba(188, 140, 242, 0.25);
+  border-left: 1.5px solid rgba(188, 140, 242, 0.25);
+  border-right: 1.5px solid rgba(188, 140, 242, 0.25);
+}
+
+.profileBackground {
+  width: 720px;
+  height: 252px;
+  left: -1px;
+  top: 0px;
+  background-color: var(--tertiary-color);
+}
+
+.returnButton {
+  position: absolute;
+  padding: 20px;
+  font-size: 14px;
+  color: white;
+  align-items: center;
+  text-decoration: none;
+  flex-direction: row;
+}
+
+.returnButtonIcon {
+  margin-right: 10px;
+}

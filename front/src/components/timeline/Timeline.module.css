@@ -1,0 +1,34 @@
+.timeline {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  align-self: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  height: 100vh;
+}
+
+.timeline > * {
+  box-sizing: border-box;
+  border-bottom: 1.5px solid rgba(188, 140, 242, 0.25);
+  border-left: 1.5px solid rgba(188, 140, 242, 0.25);
+  border-right: 1.5px solid rgba(188, 140, 242, 0.25);
+}
+
+@media only screen and (max-width: 768px) {
+  .timeline {
+    max-width: none;
+    width: auto;
+  }
+  .timeline > * {
+    border-left: none;
+    border-right: none;
+  }
+}

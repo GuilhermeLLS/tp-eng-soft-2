@@ -1,0 +1,56 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  color: var(--text-color);
+}
+
+.headerContentWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+}
+
+.content {
+  margin-top: 7px;
+  font-size: 16px;
+}
+
+.remove {
+  width: min-content;
+  height: min-content;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.remove:hover {
+  background-color: rgba(255, 35, 35, 0.4);
+  box-shadow: 0px 15px 20px rgba(71, 67, 67, 0.4);
+}
+
+.cWrapper {
+  display: flex;
+  margin: 0 0 0 10px;
+  flex-direction: column;
+}
+
+.pickerWrapper {
+  position: absolute;
+  bottom: 190px;
+}

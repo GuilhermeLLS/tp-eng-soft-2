@@ -1,0 +1,68 @@
+.composer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.input {
+  margin-bottom: 10px;
+  border: 1px solid #d0d0d0;
+  padding: 3px;
+}
+
+.input:focus {
+  outline: none !important;
+  border: 1px solid #AA14F0;
+  box-shadow: 0 0 10px rgba(147, 120, 247, 0.4);
+}
+
+.textarea {
+  padding: 3px;
+  resize: none;
+  border: 1px solid #d0d0d0;
+}
+
+.textarea:focus {
+  outline: none !important;
+  border: 1px solid #AA14F0;
+  box-shadow: 0 0 10px rgba(147, 120, 247, 0.4);
+}
+
+.composerButton {
+  margin: 15px 0;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 24px;
+  width: fit-content;
+  align-self: flex-end;
+  box-shadow: 2px 2px var(--accent-color);
+  background-color: var(--tertiary-color);
+}
+
+.composerButton:hover {
+  background-color: #aa14f0;
+  box-shadow: 0px 15px 20px rgba(147, 120, 247, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.avatar {
+  height: 50px;
+  margin-right: 5px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: indigo;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
