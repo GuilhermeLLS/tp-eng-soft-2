@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''), url('/fonts/Cairo/Cairo-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local(''), url('/fonts/Cairo/Cairo-Bold.ttf') format('truetype');
+  }
+    
+  @font-face {
+    font-family: 'Arima Madurai';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''), url('/fonts/ArimaMadurai/ArimaMadurai-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Arima Madurai';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local(''), url('/fonts/ArimaMadurai/ArimaMadurai-Bold.ttf') format('truetype');
+  }
+    

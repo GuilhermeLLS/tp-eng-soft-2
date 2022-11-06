@@ -1,0 +1,106 @@
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 50px 0;
+    justify-content: center;
+  }
+  
+  .formWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .input {
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin: 8px 0;
+    width: 300px;
+  }
+  
+  .input:focus {
+    border-color: var(--secondary-color);
+  }
+  
+  .submitButton {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid var(--secondary-color);
+    font-weight: bold;
+  }
+  
+  .submitButton:hover {
+    -webkit-box-shadow: 0px 10px 13px -7px var(--secondary-color), 6px 5px 12px 10px rgba(188, 140, 242, 0.13);
+    box-shadow: 0px 10px 13px -7px var(--secondary-color), 6px 5px 12px 10px rgba(188, 140, 242, 0.13);
+  }
+  
+  .registerButton {
+    background-color: white;
+    padding: 10px;
+    color: var(--secondary-color);
+    border-radius: 5px;
+    width: 100%;
+    margin-left: 10px;
+    text-align: center;
+    border: 1px solid var(--secondary-color);
+    font-weight: bold;
+  }
+  
+  .registerButton:hover {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+  }
+  
+  .backgroundSection {
+    background-color: var(--tertiary-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0 100px;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .logoWrapper {
+    margin-bottom: 50px;
+  }
+  
+  .errorAlert {
+    color: red;
+  }
+  
+  .image {
+    width: 700px;
+  }
+  
+  @media only screen and (min-width: 1870px) and (max-width: 2560px) {
+    .image {
+      width: 1200px;
+    }
+  }
+  
+  
+  @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .image {
+      width: 400px;
+    }
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .image {
+      width: 0px;
+    }
+  }
+  
