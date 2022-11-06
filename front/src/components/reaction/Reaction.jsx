@@ -28,13 +28,9 @@ export default function Reaction({ postReaction, reactions = {} }) {
 
   const onEmojiClick = (emoji) => {
     const emojiReactions = (reactions && reactions[emoji]) || [];
-    if (emojiReactions.length) {
-      const userIndex = emojiReactions.indexOf(user);
-      if (userIndex > -1) {
-        emojiReactions.splice(userIndex, 1);
-      } else {
-        emojiReactions.push(user);
-      }
+    const userIndex = emojiReactions.indexOf(user);
+    if (userIndex > -1) {
+      emojiReactions.splice(userIndex, 1);
     } else {
       emojiReactions.push(user);
     }
