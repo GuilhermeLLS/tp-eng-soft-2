@@ -24,7 +24,7 @@ O sistema será desenvolvido em ReactJs no frontend e por Lambda Functions em No
 
 ## Backlog
 
-O backlog do projeto está disponível na aba [Projects](https://github.com/Augustonildo/kudo-cards/projects)
+O backlog do projeto está disponível na aba [Projects](https://github.com/GuilhermeLLS/tp-eng-soft-2/projects)
 
 ## Identidade Visual
 
