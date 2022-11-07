@@ -19,10 +19,9 @@ export default function User() {
     (kudo) =>
       (kudo.sender.value === userInfo?.email || kudo.recipient.value === userInfo?.email) &&
       (!searchTerm ||
-        kudo.sender.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        kudo.recipient.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        kudo.message.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+        (kudo.sender.label + ' ' + kudo.recipient.label + ' ' + kudo.message)
+        .toLowerCase().includes(searchTerm.toLowerCase())
+  ));
 
   return (
     <div className={styles.user}>
