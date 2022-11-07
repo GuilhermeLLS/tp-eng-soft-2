@@ -4,8 +4,8 @@ const uuid = require('uuid');
 
 module.exports.usersRepository = () => {
   const cognito = new AWS.CognitoIdentityServiceProvider({ region: 'us-east-1' });
-  const clientId = '755ao9cj8j257b9u605of5huff';
-  const userPoolId = 'us-east-1_AF5l44Ear';
+  const clientId = '';
+  const userPoolId = '';
 
   return {
     signIn: async (user) => {
