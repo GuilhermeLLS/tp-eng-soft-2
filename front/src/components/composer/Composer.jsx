@@ -20,8 +20,15 @@ export default function Composer() {
 
   const loggedUser = getLoggedUser();
   const displayableUsers = users
-    ?.filter(({ email }) => email !== loggedUser)
-    ?.map(({ name, email }) => ({ value: email, label: name }));
+    ?.reduce((acc, curr) => {
+      if(email === loggedUser) {
+        acc.push({
+          value: curr.email,
+          label: curr.name,
+        })
+      }
+      return acc
+    }, [])
 
   const onSubmit = (data) => {
     const sender = users.find(({ email }) => email === loggedUser);
