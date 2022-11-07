@@ -11,10 +11,10 @@ export default function Timeline({ kudos }) {
   const timelineKudos = kudos?.filter(
     (kudo) =>
       !searchTerm ||
-      kudo.sender.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      kudo.recipient.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      kudo.message.toLowerCase().includes(searchTerm.toLowerCase())
+      (kudo.sender.label + ' ' + kudo.recipient.label +' ' + kudo.message)
+      .toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
   return (
     <div className={styles.wrapper}>
       <div className={styles.timeline}>
