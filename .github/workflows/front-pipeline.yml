@@ -14,7 +14,12 @@ on:
       - main
 jobs:
   tests:
-    runs-on: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        node-version: [12.x]
+
     defaults:
       run:
         working-directory: ./front
