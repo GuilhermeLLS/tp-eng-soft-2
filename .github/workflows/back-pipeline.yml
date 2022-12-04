@@ -1,0 +1,44 @@
+name: Backend Test Pipeline
+
+on:
+  push:
+    paths:
+      - "back/**"
+    branches:
+      - main
+  pull_request:
+    paths:
+      - "back/**"
+    types: [opened, synchronize, edited]
+    branches:
+      - main
+jobs:
+  tests:
+    runs-on: [windows-latest, ubuntu-latest, macos-latest]
+    defaults:
+      run:
+        working-directory: ./back
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Test app
+        run: yarn test
