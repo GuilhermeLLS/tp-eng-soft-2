@@ -84,7 +84,7 @@ describe('Testing Home page', () => {
         .eq(0)
         .find('span')
         .eq(3)
-        .should('have.text', 'Testing kudo!');
+        .should('have.text', 'Deu bom suas changes');
     });
   });
 });
