@@ -25,6 +25,17 @@ describe('kudos service', () => {
     expect(mockedInsertKudo).toHaveBeenCalledTimes(1);
   });
 
+  it('Should call edit kudo', () => {
+    const edittedKudo = { name: 'Kudo1+1' };
+    const mockedEditKudo = jest.fn();
+    repository.kudosRepository.mockImplementation(() => {
+      return { putKudo: mockedEditKudo };
+    });
+
+    kudosService.editKudo(edittedKudo);
+    expect(mockedEditKudo).toHaveBeenCalledTimes(1);
+  });
+
   it('Should call remove kudo', () => {
     const mockedRemoveKudo = jest.fn();
     repository.kudosRepository.mockImplementation(() => {
@@ -33,5 +44,29 @@ describe('kudos service', () => {
 
     kudosService.removeKudo(1);
     expect(mockedRemoveKudo).toHaveBeenCalledTimes(1);
+  });
+
+  it('GetKudos should be sorted', () => {
+    const mockedGetKudos = jest.fn(() => mockKudos);
+    repository.kudosRepository.mockImplementation(() => {
+      return { getKudos: mockedGetKudos };
+    });
+
+    return kudosService.getKudos().then((kudoList) => {
+      expect(mockedGetKudos).toHaveBeenCalledTimes(1);
+      expect(kudoList).toStrictEqual([...mockKudos].sort(kudosService.sortObjectArrayByDate));
+    });
+  });
+
+  it('GetKudos can return empty list', () => {
+    const mockedGetKudos = jest.fn(() => []);
+    repository.kudosRepository.mockImplementation(() => {
+      return { getKudos: mockedGetKudos };
+    });
+
+    return kudosService.getKudos().then((kudoList) => {
+      expect(mockedGetKudos).toHaveBeenCalledTimes(1);
+      expect(kudoList.length).toBe(0);
+    });
   });
 });
