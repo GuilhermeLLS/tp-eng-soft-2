@@ -19,16 +19,15 @@ export default function Composer() {
   } = useForm();
 
   const loggedUser = getLoggedUser();
-  const displayableUsers = users
-    ?.reduce((acc, curr) => {
-      if(acc.email !== loggedUser) {
-        acc.push({
-          value: curr.email,
-          label: curr.name,
-        })
-      }
-      return acc
-    }, [])
+  const displayableUsers = users?.reduce((acc, curr) => {
+    if (acc.email !== loggedUser) {
+      acc.push({
+        value: curr.email,
+        label: curr.name,
+      });
+    }
+    return acc;
+  }, []);
 
   const onSubmit = (data) => {
     const sender = users.find(({ email }) => email === loggedUser);
