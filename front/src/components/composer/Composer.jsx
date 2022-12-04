@@ -17,7 +17,7 @@ export default function Composer() {
     control,
     formState: { errors },
   } = useForm();
-
+  console.log('');
   const loggedUser = getLoggedUser();
   const displayableUsers = users?.reduce((acc, curr) => {
     if (acc.email !== loggedUser) {
