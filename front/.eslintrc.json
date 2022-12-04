@@ -22,7 +22,7 @@
         "react"
     ],
     "rules": {
-        "prettier/prettier": ["error", { "singleQuote": true }],
+        "prettier/prettier": ["error", { "singleQuote": true, "endOfLine": "auto" }],
         "react/react-in-jsx-scope": "off",
         "react/prop-types": "off"
     }
