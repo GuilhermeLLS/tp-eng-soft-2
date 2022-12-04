@@ -21,7 +21,7 @@ export default function Composer() {
   const loggedUser = getLoggedUser();
   const displayableUsers = users
     ?.reduce((acc, curr) => {
-      if(email === loggedUser) {
+      if(acc.email !== loggedUser) {
         acc.push({
           value: curr.email,
           label: curr.name,
