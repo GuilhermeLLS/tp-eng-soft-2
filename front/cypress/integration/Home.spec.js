@@ -76,7 +76,7 @@ describe('Testing Home page', () => {
         .eq(0)
         .find('span')
         .eq(2)
-        .should('have.text', 'Para: John Lennon');
+        .should('have.text', 'Para: lara Silva');
 
       cy.get('article', { timeout: 5000 })
         .eq(0)
